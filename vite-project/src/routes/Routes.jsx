@@ -8,6 +8,7 @@ import DashBoard from "../pages/DashBoard";
 import Company from "../pages/Company";
 import Jobs from "../pages/Jobs";
 import Cvs from "../pages/Cvs";
+import Tags from "../pages/Tags";
 
 const Routes = [
  {
@@ -17,6 +18,10 @@ const Routes = [
    {
     index: true,
     element: <Home />,
+   },
+   {
+    path: "/tags/:id",
+    element: <Tags />,
    },
    {
     path: "/login",

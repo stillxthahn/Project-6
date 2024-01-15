@@ -4,11 +4,15 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Logout from "../pages/Logout";
 import PrivateRoutes from "../components/PrivateRoutes";
-import DashBoard from "../pages/DashBoard";
 import Company from "../pages/Company";
 import Jobs from "../pages/Jobs";
-import Cvs from "../pages/Cvs";
-import Tags from "../pages/Tags";
+import JobTag from "../pages/JobTag";
+import Search from "../components/Search";
+import AdminCompany from "../pages/AdminCompany";
+import AdminDashBoard from "../pages/AdminDashBoard";
+import AdminJobs from "../pages/AdminJobs";
+import AdminCvs from "../pages/AdminCvs";
+import JobSearch from "../pages/JobSearch";
 
 const Routes = [
  {
@@ -20,8 +24,12 @@ const Routes = [
     element: <Home />,
    },
    {
-    path: "/tags/:id",
-    element: <Tags />,
+    path: "/tags/:key",
+    element: <JobTag />,
+   },
+   {
+    path: "/company/:id",
+    element: <Company />,
    },
    {
     path: "/login",
@@ -36,23 +44,35 @@ const Routes = [
     element: <Logout />,
    },
    {
+    path: "/search",
+    element: <Search />,
+   },
+   {
+    path: "/search/:input?/:city",
+    element: <JobSearch />,
+   },
+   {
+    path: "/jobs/:id",
+    element: <Jobs />,
+   },
+   {
     element: <PrivateRoutes />,
     children: [
      {
       path: "/admin/dashboard",
-      element: <DashBoard />,
+      element: <AdminDashBoard />,
      },
      {
       path: "/admin/company",
-      element: <Company />,
+      element: <AdminCompany />,
      },
      {
       path: "/admin/jobs",
-      element: <Jobs />,
+      element: <AdminJobs />,
      },
      {
       path: "/admin/cvs",
-      element: <Cvs />,
+      element: <AdminCvs />,
      },
     ],
    },

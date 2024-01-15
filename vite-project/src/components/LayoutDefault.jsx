@@ -1,7 +1,9 @@
 import { getCookie } from "../helpers/cookie";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import "./LayoutDefault.scss";
+import { useSelector } from "react-redux";
 const LayoutDefault = () => {
+ const authen = useSelector((state) => state.authenReducer);
  const token = getCookie("token");
  console.log(token);
  return (
@@ -13,6 +15,9 @@ const LayoutDefault = () => {
 
     {token && (
      <ul className="header__menu">
+      <li>
+       <NavLink to="/">Home</NavLink>
+      </li>
       <li>
        <NavLink to="/admin/dashboard">DashBoard</NavLink>
       </li>
@@ -45,7 +50,9 @@ const LayoutDefault = () => {
      )}
     </ul>
    </header>
-   <Outlet />1
+   <div className="body">
+    <Outlet />
+   </div>
   </>
  );
 };

@@ -14,6 +14,11 @@ export const getJob = async (id) => {
  return response;
 };
 
+export const getJobByCompany = async (id) => {
+ const response = await get(`jobs?idCompany=${id}`);
+ return response;
+};
+
 export const getJobBySeach = async (input, city) => {
  var path = `jobs?description_like=${input || ""}&city_like=`;
  if (city !== "all") {

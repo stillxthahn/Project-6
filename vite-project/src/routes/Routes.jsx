@@ -8,10 +8,10 @@ import Company from "../pages/Company";
 import Jobs from "../pages/Jobs";
 import JobTag from "../pages/JobTag";
 import Search from "../components/Search";
-import AdminCompany from "../pages/AdminCompany";
-import AdminDashBoard from "../pages/AdminDashBoard";
-import AdminJobs from "../pages/AdminJobs";
-import AdminCvs from "../pages/AdminCvs";
+import AdminCompany from "../pages/PrivateRoute/AdminCompany";
+import AdminDashBoard from "../pages/PrivateRoute/AdminDashBoard";
+import AdminJobs from "../pages/PrivateRoute/AdminJobs";
+import AdminCvs from "../pages/PrivateRoute/AdminCvs";
 import JobSearch from "../pages/JobSearch";
 
 const Routes = [
